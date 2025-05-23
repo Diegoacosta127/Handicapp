@@ -98,6 +98,7 @@ $$
     Season Balance = \sum_{i=1}^{n} (Match Balance)_i,\ n
 \end{align}
 $$
+
 Where $n$ is the total of matches played in the season.
 
 $$
@@ -116,7 +117,9 @@ $$
     Team Contribution = \sum_{i=1}^{4} Player Contribution_i
 \end{align}
 $$
-From $(4)$ and $(5)$:
+
+With $Player Contribution$ and $Team Contribution$ we have:
+
 $$
 \begin{align}
     Proportional Contribution = \frac{Player Contribution}{Team Contribution} 
@@ -132,7 +135,7 @@ And, finally, the new handicap is calculated as:
 $$New Handicap = Initial Handicap + Handicap Variation$$
 
 ### Author
-Developed entirely by Diego Acosta. If you have any questions, suggestions, contributions, or whatever, please feel free to contact me at my [website](https://diegoacosta127.pages.dev/).
+Developed entirely by Diego Acosta ([@diegoacosta127](https://github.com/Diegoacosta127)). If you have any questions, suggestions, contributions, or whatever, please feel free to contact me at my [website](https://diegoacosta127.pages.dev/).
 
 ### License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
