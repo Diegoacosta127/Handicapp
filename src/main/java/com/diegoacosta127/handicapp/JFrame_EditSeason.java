@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package handicapp;
+package com.diegoacosta127.handicapp;
 
 import java.awt.event.ActionEvent;
 import java.sql.*;

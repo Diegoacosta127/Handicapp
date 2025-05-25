@@ -1,4 +1,4 @@
-package handicapp;
+package com.diegoacosta127.handicapp;
 import java.sql.*;
 import java.util.Properties;
 import javax.swing.JOptionPane;

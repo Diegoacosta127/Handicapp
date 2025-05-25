@@ -10,6 +10,14 @@ IF %ERRORLEVEL% NEQ 0 (
     exit /b 1
 )
 
+REM Check if Maven is in the PATH
+where mvn >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 (
+    echo Error: mvn not installed or not in the PATH.
+    pause
+    exit /b 1
+)
+
 REM Check if database already exists
 psql -U %DB_USER% -lqt | findstr /C:" %DB_NAME% " >nul
 IF %ERRORLEVEL% NEQ 0 (
@@ -27,6 +35,5 @@ IF %ERRORLEVEL% NEQ 0 (
     exit /b 1
 )
 
-REM Execute the Java program
-java -cp "dist\Handicapp.jar;dist\lib\postgresql.42.7.4.jar" handicapp.JFrame_Main
-
+REM Compile and run using Maven
+mvn clean compile exec:java

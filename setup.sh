@@ -9,6 +9,13 @@ then
     exit 1
 fi
 
+# Check if Maven is installed
+if ! command -v mvn > /dev/null;
+then
+    echo "Error: mvn not installed or not in PATH."
+    exit 1
+fi
+
 # Create the database if it doesn't exist
 if ! psql -U "$DB_USER" -lqt | cut -d \| -f 1 | grep -qw "$DB_NAME";
 then
@@ -26,5 +33,5 @@ psql -U "$DB_USER" -d "$DB_NAME" < database/handicapp.sql || {
     exit 1
 }
 
-# Execute the Java program
-java -cp "dist/Handicapp.jar:dist/lib/postgresql.42.7.4.jar" handicapp.JFrame_Main
+# Compile and run using Maven
+mvn clean compile exec:java

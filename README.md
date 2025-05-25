@@ -3,8 +3,9 @@
 ## The ultimate tool for calculating handicaps in polo
 
 ### Pre-requisites
-- Java 8 or higher
-- PosgreSQL
+- [Java 8 or higher](https://www.oracle.com/java/technologies/downloads/archive/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Maven](https://maven.apache.org/install.html)
 
 ### Installation
 

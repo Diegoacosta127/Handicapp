@@ -1,4 +1,4 @@
-package handicapp;
+package com.diegoacosta127.handicapp;
 
 public class Country {
     
