@@ -110,10 +110,8 @@ class JFrame_EditTeam extends JFrame{
         // Edit
         btnEdit = new JButton("Edit");
         btnEdit.setBounds(160, 370, 100, 30);
-        btnEdit.addActionListener(new ActionListener(){
-            public void actionPerformed (ActionEvent e) {
-                editTeam();
-            }
+        btnEdit.addActionListener((ActionEvent e) -> {
+            editTeam();
         });
         add(btnEdit);
         
