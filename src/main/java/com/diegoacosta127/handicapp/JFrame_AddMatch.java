@@ -273,8 +273,19 @@ public class JFrame_AddMatch extends JFrame {
                     for (int i = 0; i <2; i++) {
                         int j = 0;
                         for (Player player : players[i]){
-                            app.updateQuery("INSERT INTO match_has_player(match_id, player_id, score) "
-                                          + "VALUES(" + match.getMatchId() + ", " + player.getPlayerId() + ", " + score[i][j].getSelectedItem() + ");");
+                            if (i == 0) {
+                                app.updateQuery("INSERT INTO match_has_player(match_id, player_id, score, team_season) "
+                                              + "VALUES(" + match.getMatchId()
+                                              + ", " + player.getPlayerId()
+                                              + ", " + score[i][j].getSelectedItem()
+                                              + ", " + teamHomeId + ");");
+                            } else {
+                                app.updateQuery("INSERT INTO match_has_player(match_id, player_id, score, team_season) "
+                                              + "VALUES(" + match.getMatchId()
+                                              + ", " + player.getPlayerId()
+                                              + ", " + score[i][j].getSelectedItem()
+                                              + ", " + teamAwayId + ");");
+                            }
                             j++;
                         }
                     }
