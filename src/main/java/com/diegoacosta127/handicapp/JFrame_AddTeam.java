@@ -437,7 +437,7 @@ public class JFrame_AddTeam extends JFrame{
                                                       "Warning", JOptionPane.WARNING_MESSAGE);
                     } else {
                         String displayNamesAndHcp = "Team: " + team.toString() + "\nSeason: " + season.toString() + "\n";
-                        Player player;// = new Player();
+                        Player player;
                         for (int i = 0; i < comboPlayers.length; i++) {
                             player = (Player) comboPlayers[i].getSelectedItem();
                             displayNamesAndHcp += player.toString() + "\tHcp: " + hcps.get(i) + "\n";
