@@ -7,7 +7,8 @@ public class Player {
     private String lastName;
     private String midName;
     private int countryId;
-    
+    private int score;
+
     Player(){
     }
 
@@ -57,9 +58,15 @@ public class Player {
     public void setCountryId(int countryId) {
         this.countryId = countryId;
     }
-    
-    
-    
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
         if (midName == null) {
