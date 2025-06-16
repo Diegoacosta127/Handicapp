@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.17 (Ubuntu 14.17-0ubuntu0.22.04.1)
--- Dumped by pg_dump version 14.17 (Ubuntu 14.17-0ubuntu0.22.04.1)
+-- Dumped from database version 14.18 (Ubuntu 14.18-0ubuntu0.22.04.1)
+-- Dumped by pg_dump version 14.18 (Ubuntu 14.18-0ubuntu0.22.04.1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,6 +24,7 @@ ALTER TABLE IF EXISTS ONLY public.season DROP CONSTRAINT IF EXISTS season_countr
 ALTER TABLE IF EXISTS ONLY public.player DROP CONSTRAINT IF EXISTS player_country_id_fkey;
 ALTER TABLE IF EXISTS ONLY public.match DROP CONSTRAINT IF EXISTS match_team_home_fkey;
 ALTER TABLE IF EXISTS ONLY public.match DROP CONSTRAINT IF EXISTS match_team_away_fkey;
+ALTER TABLE IF EXISTS ONLY public.match_has_player DROP CONSTRAINT IF EXISTS match_has_player_team_season_fkey;
 ALTER TABLE IF EXISTS ONLY public.match_has_player DROP CONSTRAINT IF EXISTS match_has_player_player_id_fkey;
 ALTER TABLE IF EXISTS ONLY public.match_has_player DROP CONSTRAINT IF EXISTS match_has_player_match_id_fkey;
 ALTER TABLE IF EXISTS ONLY public.team DROP CONSTRAINT IF EXISTS team_pkey;
@@ -106,7 +107,8 @@ CREATE TABLE public.match (
 CREATE TABLE public.match_has_player (
     match_id integer NOT NULL,
     player_id integer NOT NULL,
-    score integer NOT NULL
+    score integer NOT NULL,
+    team_season integer NOT NULL
 );
 
 
@@ -337,7 +339,7 @@ COPY public.match (match_id, team_home, team_away, score_home, score_away) FROM 
 -- Data for Name: match_has_player; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.match_has_player (match_id, player_id, score) FROM stdin;
+COPY public.match_has_player (match_id, player_id, score, team_season) FROM stdin;
 \.
 
 
@@ -586,6 +588,14 @@ ALTER TABLE ONLY public.match_has_player
 
 ALTER TABLE ONLY public.match_has_player
     ADD CONSTRAINT match_has_player_player_id_fkey FOREIGN KEY (player_id) REFERENCES public.player(player_id);
+
+
+--
+-- Name: match_has_player match_has_player_team_season_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.match_has_player
+    ADD CONSTRAINT match_has_player_team_season_fkey FOREIGN KEY (team_season) REFERENCES public.team_has_season(team_season);
 
 
 --
