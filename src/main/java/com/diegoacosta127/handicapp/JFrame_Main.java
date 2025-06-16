@@ -31,9 +31,8 @@ public class JFrame_Main extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menu_file = new javax.swing.JMenu();
         export = new javax.swing.JMenu();
         export_season = new javax.swing.JMenuItem();
         export_team = new javax.swing.JMenuItem();
@@ -50,13 +49,11 @@ public class JFrame_Main extends JFrame {
         add_season = new javax.swing.JMenuItem();
         add_match = new javax.swing.JMenuItem();
 
-        jMenuItem1.setText("jMenuItem1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setPreferredSize(new java.awt.Dimension(400, 400));
 
-        jMenu1.setText("File");
+        menu_file.setText("File");
 
         export.setText("Export");
 
@@ -84,7 +81,7 @@ public class JFrame_Main extends JFrame {
         });
         export.add(export_player);
 
-        jMenu1.add(export);
+        menu_file.add(export);
 
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
@@ -92,9 +89,9 @@ public class JFrame_Main extends JFrame {
                 exitActionPerformed(evt);
             }
         });
-        jMenu1.add(exit);
+        menu_file.add(exit);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menu_file);
 
         menu_edit.setText("Edit");
 
@@ -178,7 +175,7 @@ public class JFrame_Main extends JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 379, Short.MAX_VALUE)
         );
 
         pack();
@@ -254,7 +251,9 @@ public class JFrame_Main extends JFrame {
     }//GEN-LAST:event_edit_countryActionPerformed
 
     private void export_seasonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_export_seasonActionPerformed
-        ComeBackSoon.comeBackSoon();
+        JFrame_ExportSeason exportSeason = new JFrame_ExportSeason(app);
+        exportSeason.setLocationRelativeTo(null);
+        exportSeason.setVisible(true);
     }//GEN-LAST:event_export_seasonActionPerformed
 
     private void export_teamActionPerformed(java.awt.event.ActionEvent evt) {
@@ -322,10 +321,9 @@ public class JFrame_Main extends JFrame {
     private javax.swing.JMenuItem export_player;
     private javax.swing.JMenuItem export_season;
     private javax.swing.JMenuItem export_team;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu menu_add;
     private javax.swing.JMenu menu_edit;
+    private javax.swing.JMenu menu_file;
     // End of variables declaration//GEN-END:variables
 }
