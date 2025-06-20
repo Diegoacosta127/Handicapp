@@ -247,7 +247,8 @@ public class JFrame_ExportSeason extends JFrame {
                                               "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (FileNotFoundException fileEx) {
-            System.out.println(fileEx);
+            JOptionPane.showMessageDialog(this, "Error creating file: " + fileEx,
+                                          "Error", JOptionPane.ERROR_MESSAGE);
         }
         
     }
