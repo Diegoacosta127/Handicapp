@@ -51,7 +51,6 @@ public class JFrame_Main extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setPreferredSize(new java.awt.Dimension(400, 400));
 
         menu_file.setText("File");
 
@@ -257,7 +256,9 @@ public class JFrame_Main extends JFrame {
     }//GEN-LAST:event_export_seasonActionPerformed
 
     private void export_teamActionPerformed(java.awt.event.ActionEvent evt) {
-        ComeBackSoon.comeBackSoon();
+        JFrame_ExportTeam exportTeam = new JFrame_ExportTeam(app);
+        exportTeam.setLocationRelativeTo(null);
+        exportTeam.setVisible(true);
     }
     
     private void add_matchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_matchActionPerformed
