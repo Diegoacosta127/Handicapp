@@ -4,6 +4,7 @@ public class Team {
 
     public int teamId;
     public String name;
+    public int teamSeason;
 
     Team (){
     }
@@ -27,6 +28,14 @@ public class Team {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getTeamSeason() {
+        return teamSeason;
+    }
+
+    public void setTeamSeason(int teamSeason) {
+        this.teamSeason = teamSeason;
     }
     
     @Override
