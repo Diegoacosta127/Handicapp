@@ -15,7 +15,7 @@
    ```
 2. Move to the project directory:
    ```
-   cd handicapp
+   cd Handicapp
    ```
 
 #### For Linux users
@@ -73,9 +73,10 @@ Handicapp also allows you to edit:
 
 Also you can export data to .pdf files:
 - Seasons (only if the season is over)
+- Teams (history of matches played in finished seasons)
 
 Coming soon:
-- Export data (teams and players) to files
+- Export data (players) to files
 
 ### How Handicapp works?
 When a season is over (after a match is added as final), Handicapp calculates the handicap for each player in the season and generates the next year season with the same teams and its players, but with the new handicap for each player. Since handicap is actually given by a specialized committee appreciation and not by maths, I've developed the following rules:
