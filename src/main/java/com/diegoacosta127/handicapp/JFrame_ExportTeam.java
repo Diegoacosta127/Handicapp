@@ -141,10 +141,10 @@ public class JFrame_ExportTeam extends JFrame {
                     table.addCell(cell);
                     // Matches
                     ResultSet rsMatch = app.selectQuery("SELECT m.* FROM match m "
-                                       + "JOIN team_has_season ths "
-                                       + "ON (m.team_home = ths.team_season "
-                                           + "OR m.team_away = ths.team_season) "
-                                       + "WHERE team_season = " + team.getTeamSeason() + ";");
+                                                      + "JOIN team_has_season ths "
+                                                      + "ON (m.team_home = ths.team_season "
+                                                          + "OR m.team_away = ths.team_season) "
+                                                      + "WHERE team_season = " + team.getTeamSeason() + ";");
                     int matchCount = 1;
                     while (rsMatch.next()) {
                         cell = new PdfPCell(new Phrase(" "));
