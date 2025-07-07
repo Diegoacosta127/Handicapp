@@ -268,7 +268,9 @@ public class JFrame_Main extends JFrame {
     }//GEN-LAST:event_add_matchActionPerformed
 
     private void export_playerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_export_playerActionPerformed
-        ComeBackSoon.comeBackSoon();
+        JFrame_ExportPlayer exportPlayer = new JFrame_ExportPlayer(app);
+        exportPlayer.setLocationRelativeTo(null);
+        exportPlayer.setVisible(true);
     }//GEN-LAST:event_export_playerActionPerformed
 
     /**
